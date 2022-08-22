@@ -68,12 +68,15 @@ def each_info(opp_s,hyp_s,adj_s,opp_a,hyp_a,adj_a):
         
         #if side, ask which side
         if side_angle_check == "Side" and side_angle_check != "Invalid_choice":
-
-            while side_angle_check != "Invalid choice":
+            
+            side_check = "Invalid choice"
+            while side_check == 'Invalid choice':    
                 
-                which_side = input("Which side?: ")
+                #ask user which side     
+                which_side = input("Which side?: ").lower()
                 side_check = string_check(which_side, side_angles_options, side_angle_error)
-                
+                print()
+            
 
                 if side_check == "Hypotenuse":
                     print("Hypotenuse side: {}".format(hyp_s))
@@ -81,24 +84,33 @@ def each_info(opp_s,hyp_s,adj_s,opp_a,hyp_a,adj_a):
                     print("Opposite side: {}".format(opp_s))
                 if side_check == "Adjacent":
                     print("Adjacent side: {}".format(adj_s))
-                
-        elif side_angle_check == "Angle" and side_angle_check != "Invalid_choice":
-            while side_angle_check != "Invalid choice":
-            
-                which_angle = input("Which angle?: ")
-                angle_check = string_check(which_angle, side_angles_options, side_angle_error)
-                if angle_check != "Invalid choice":
-                    valid = "yes"
-                
+                print()
         
-                if angle_check == "Hypotenuse" and valid == "yes":
+        #if angle, ask which angle        
+        elif side_angle_check == "Angle" and side_angle_check != "Invalid_choice":
+
+            angle_check = "Invalid choice"
+            while angle_check == "Invalid choice":
+                
+                
+                #ask user which angle they want
+                which_angle = input("Which angle?: ").lower()
+                angle_check = string_check(which_angle, side_angles_options, side_angle_error)
+                print()
+            
+           
+                if angle_check == "Hypotenuse":
                     print("Hypotenuse angle: {}".format(hyp_a))
                 if angle_check == "Opposite":
                     print("Opposite angle: {}".format(opp_a))
                 if angle_check == "Adjacent":
                     print("Adjacent angle: {}".format(adj_a))
                     
+                print()
+            
+            
                     
+                
 hyp_s = 5
 opp_s = 4
 adj_s = 3

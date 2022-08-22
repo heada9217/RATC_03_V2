@@ -20,7 +20,7 @@ for item in range(0,4):
     
     angle_3 = float(input("Angle 3: "))
     
-    angles = (angle_1, angle_3, angle_3)
+    angles = (angle_1, angle_2, angle_3)
     
     decimal = int(input("How many decimal places do you want?: "))
     
